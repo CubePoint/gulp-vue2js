@@ -1,0 +1,30 @@
+{
+  "name": "gulp-vue2js",
+  "version": "1.0.0",
+  "description": "change .vue file to .js",
+  "main": "index.js",
+  "scripts": {
+    "test": "vue2js ./test/_Component ./test/Component"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CubePoint/gulp-vue2js.git"
+  },
+  "keywords": [
+    "vue",
+    "gulp",
+    "component"
+  ],
+  "author": "CubePoint",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CubePoint/gulp-vue2js/issues"
+  },
+  "homepage": "https://github.com/CubePoint/gulp-vue2js#readme",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-livereload": "^4.0.1",
+    "gulp-watch": "^5.0.1",
+    "walk": "^2.3.14"
+  }
+}
