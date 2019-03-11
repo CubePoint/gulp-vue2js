@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var vue2js = require('./gulpfile');
 var argv = process.argv;
 var path = require('path');

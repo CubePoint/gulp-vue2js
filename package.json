@@ -1,6 +1,6 @@
 {
   "name": "gulp-vue2js",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "change .vue file to .js",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "component"
   ],
   "bin": {
-    "wx2ant": "index.js"
+    "vue2js": "index.js"
   },
   "author": "CubePoint",
   "license": "ISC",
