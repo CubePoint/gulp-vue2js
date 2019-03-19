@@ -94,7 +94,7 @@ function task_default(vuePathBase,jsPathBase) {
     in_style = in_style.replace(/\'/g,'\\\'').replace(/\r\n/g,'').replace(/\s+/g,'\ ');
 
     let in_file = `
-(function(global) {
+;(function(global) {
   ${comChild}${comChild2}
   global._comObj = {
     template: '${in_template}',
@@ -106,7 +106,7 @@ function task_default(vuePathBase,jsPathBase) {
       inner: '${in_style}'
     }
   }
-})(window)
+})(window);
     `;
     writeFile(n_dest, in_file,{flag:'w+'});
   }

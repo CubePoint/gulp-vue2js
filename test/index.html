@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>main</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Cache-Control" name="no-store" />
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+  <script src="../lib/vue-loader.js"></script>
+
+</head>
+<body>
+    <div id="app">
+      <router-view></router-view>
+      <v-main></v-main>
+      <v-Docs></v-Docs>
+    </div>
+</body>
+</html>
+
+
+<script type="text/javascript">
+    setComMainf({
+      Main: './Component/page/Waiter.js',
+      allCom: './Component/pack/allCom.js',
+      Docs: './Component/Docs.js'
+    })
+    var router = new VueRouter({
+      routes: [
+        { path: '/', component: loadRouterCom('Main') },
+        { path: '/Docs', component: loadRouterCom('Docs') }
+      ]
+    })
+
+    new Vue({
+      el: "#app",
+      router,
+      components: { 
+        'v-main': loadChildCom('allCom.Main'),
+        'v-docs': loadChildCom('allCom.Docs')
+      },
+      data: {
+      },
+      mounted() {
+      },
+    })
+
+</script>
