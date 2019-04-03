@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var vue2js = require('./gulpfile');
+var vue2js = require('./parse');
 var argv = process.argv;
 var path = require('path');
 var fs = require('fs');

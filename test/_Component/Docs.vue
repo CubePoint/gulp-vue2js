@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
   export default {
     name: 'Docs',
     data() { 
@@ -17,6 +16,9 @@
       }
     },
     methods: {
+      sdf() {
+        let a ={};
+      }
     }   
   }
 </script>

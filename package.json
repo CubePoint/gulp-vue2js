@@ -1,6 +1,6 @@
 {
   "name": "gulp-vue2js",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "change .vue file to .js",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "component"
   ],
   "bin": {
-    "vue2js": "index.js",
+    "vue2js": "cmd_parse.js",
     "js2pack": "cmd_concat.js"
   },
   "author": "CubePoint",
@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/CubePoint/gulp-vue2js#readme",
   "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "gulp": "^4.0.0",
     "gulp-livereload": "^4.0.1",
     "gulp-watch": "^5.0.1",

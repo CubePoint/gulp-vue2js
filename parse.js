@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var babel = require("@babel/core");
 var fs = require('fs');
 var path = require('path');
 var walk = require('walk');
@@ -108,6 +109,7 @@ function task_default(vuePathBase,jsPathBase) {
   }
 })(window);
     `;
+    in_file = babel.transformSync(in_file,{presets: ["@babel/preset-env"],sourceType:"script"}).code
     writeFile(n_dest, in_file,{flag:'w+'});
   }
 }
