@@ -2,13 +2,10 @@
 
 (function (global) {
   global._comObj = {
-    template: ' <div> <h1> i am the Docs </h1> <Footer></Footer> </div>',
+    template: ' <div> <h1> Welcome to use vue2js </h1> <router-link to="/About">about</router-link> </div>',
     script: {
-      name: 'Docs',
       data: function data() {
-        return {
-          val: true
-        };
+        return {};
       },
       methods: {}
     },

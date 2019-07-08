@@ -78,7 +78,16 @@ function task_default(vuePathBase,jsPathBase) {
         j[1] = j[1].trim();
         let z = j[1].match(/^[\'\"].*((?:[\'\"])|(?:;))/);
         comChild2 += j[1].slice(z[0].length);
-        comChild += `var ${j[0]} = ${z[0]}`;
+
+        let comVar = j[0];
+        if (/^\{.*\}$/.test(comVar)) {
+          let comVarAry = comVar.slice(1,-1).split(',');
+          for (let c of comVarAry) {
+            comChild += `\n  var ${c} = { type: 'pack', url: ${z[0].replace(/;$/,'')}, name: '${c}' };`;
+          }
+        }else {
+          comChild += `var ${j[0]} = ${z[0]}`;
+        }
       }
     else 
       comChild2 += in_script_imports.trim();

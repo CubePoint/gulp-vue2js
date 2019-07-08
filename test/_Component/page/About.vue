@@ -1,27 +1,29 @@
 <template>
   <div>
     <h1>
-      i am the Docs
+      Hello! by CubePoint
     </h1>
-    <Footer></Footer>
+    <m-backbtn></m-backbtn>
   </div>
 </template>
 
 <script>
+  import {Backbtn} from './Component/pack/allCom.js';
   export default {
-    name: 'Docs',
+    components: {
+      'm-backbtn': Backbtn,
+    },
     data() { 
       return {
-        val: true
       }
     },
     methods: {
-    }   
+    }
   }
 </script>
 
 <style scoped>
 h1 {
-  color: chocolate;
+  color: cadetblue;
 }
 </style>

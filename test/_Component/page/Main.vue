@@ -1,25 +1,20 @@
 <template>
   <div>
     <h1>
-      i am the Docs
+      Welcome to use vue2js
     </h1>
-    <Footer></Footer>
+    <router-link to="/About">about</router-link>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Docs',
     data() { 
       return {
-        val: true
       }
     },
     methods: {
-      sdf() {
-        let a ={};
-      }
-    }   
+    }
   }
 </script>
 

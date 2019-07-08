@@ -1,6 +1,6 @@
 {
   "name": "gulp-vue2js",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "change .vue file to .js",
   "main": "index.js",
   "scripts": {
