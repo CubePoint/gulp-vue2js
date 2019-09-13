@@ -83,6 +83,7 @@ function task_default(vuePathBase,jsPathBase) {
         if (/^\{.*\}$/.test(comVar)) {
           let comVarAry = comVar.slice(1,-1).split(',');
           for (let c of comVarAry) {
+            c = c.trim();
             comChild += `\n  var ${c} = { type: 'pack', url: ${z[0].replace(/;$/,'')}, name: '${c}' };`;
           }
         }else {
@@ -118,7 +119,11 @@ function task_default(vuePathBase,jsPathBase) {
   }
 })(window);
     `;
-    in_file = babel.transformSync(in_file,{presets: ["@babel/preset-env"],sourceType:"script"}).code
+    try {
+      in_file = babel.transformSync(in_file,{presets: ["@babel/preset-env"],sourceType:"script"}).code;
+    } catch (error) {
+      console.warn("警告ES语法错误：",error)
+    }
     writeFile(n_dest, in_file,{flag:'w+'});
   }
 }

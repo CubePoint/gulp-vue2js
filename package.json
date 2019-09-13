@@ -1,10 +1,9 @@
 {
   "name": "gulp-vue2js",
-  "version": "1.0.9",
+  "version": "1.0.91",
   "description": "change .vue file to .js",
   "main": "index.js",
   "scripts": {
-    "test": "vue2js ./test/_Component ./test/Component"
   },
   "repository": {
     "type": "git",
