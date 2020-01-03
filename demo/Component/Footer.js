@@ -2,7 +2,15 @@
 
 (function (global) {
   global._comObj = {
-    template: ' <div> <footer class="m-footer-main"> @2019.cpomelo </footer> </div>',
+    render: function render() {
+      var _vm = this;
+
+      var _h = _vm.$createElement;
+
+      var _c = _vm._self._c || _h;
+
+      return _vm._m(0);
+    },
     script: {
       data: function data() {
         return {};
@@ -11,7 +19,7 @@
     },
     style: {
       scoped: false,
-      inner: '.m-footer-main { position: fixed; bottom: 0; width: 100%; text-align: center; color: #aaa;}'
+      inner: ' .m-footer-main { position: fixed; bottom: 0; width: 100%; text-align: center; color: #aaa; } '
     }
   };
 })(window);

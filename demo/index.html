@@ -5,9 +5,9 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta http-equiv="Cache-Control" name="no-store" />
 
-  <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <script src="../lib/vue-loader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.7/vue-router.js"></script>
+  <script src="../lib/vue-loader.min.js"></script>
 
 </head>
 <body>
@@ -34,13 +34,13 @@
 
     new Vue({
       el: "#app",
-      router,
+      router: router,
       components: { 
         'm-footer': loadChildCom('allCom.Footer')
       },
       data: {
       },
-      mounted() {
+      mounted:function() {
       },
     })
 

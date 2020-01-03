@@ -5,6 +5,9 @@ var path = require('path');
 var walk = require('walk');
 var watch = require('gulp-watch');
 var livereload = require('gulp-livereload');
+var compiler = require("vue-template-compiler");
+var transpile = require("vue-template-es2015-compiler");
+
 
 var src;
 var dest;
@@ -58,6 +61,7 @@ function task_default(vuePathBase,jsPathBase) {
     last_idx = fstr.lastIndexOf('</template>');
     in_template = fstr.slice(first_idx+10, last_idx);
     in_template = in_template.replace(/\'/g,'\\\'').replace(/\r\n/g,'').replace(/\s+/g,'\ ');
+    let in_render = toRenderFunc(compiler.compile(in_template).render);
 
     // 解析script 1.提取引用组件 2.提取外部变量 3.提取组件对象
     let in_script = '';
@@ -108,7 +112,7 @@ function task_default(vuePathBase,jsPathBase) {
 ;(function(global) {
   ${comChild}${comChild2}
   global._comObj = {
-    template: '${in_template}',
+    render: ${in_render},
     script: {
       ${in_script}
     },
@@ -207,6 +211,11 @@ function copyFile(src,dest) {
       }
     });
   })
+}
+
+function toRenderFunc(funcStr) {
+  funcStr = transpile(`function render(){${funcStr}}`);
+  return funcStr;
 }
 
 module.exports = {

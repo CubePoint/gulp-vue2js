@@ -107,6 +107,9 @@ _comName_ : String
 
 
 ## 更新日志 ##
+* v1.1.0
+  * 组件template改为使用render函数
+
 * v1.0.9
   * 单页面路由组件支持使用组件包
   * 更新demo用例

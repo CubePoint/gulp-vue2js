@@ -7,7 +7,15 @@
     name: 'Backbtn'
   };
   global._comObj = {
-    template: ' <div> <h1> Hello! by CubePoint </h1> <m-backbtn></m-backbtn> </div>',
+    render: function render() {
+      var _vm = this;
+
+      var _h = _vm.$createElement;
+
+      var _c = _vm._self._c || _h;
+
+      return _c('div', [_c('h1', [_vm._v(" Hello! by CubePoint ")]), _vm._v(" "), _c('m-backbtn')], 1);
+    },
     script: {
       components: {
         'm-backbtn': Backbtn
@@ -19,7 +27,7 @@
     },
     style: {
       scoped: true,
-      inner: 'h1 { color: cadetblue;}'
+      inner: ' h1 { color: cadetblue; } '
     }
   };
 })(window);
